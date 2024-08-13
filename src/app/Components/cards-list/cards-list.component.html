@@ -10,6 +10,7 @@
         </option>
     </select>
 </div>
+<p>{{filteredCarsArr.length}} Results</p>
 <div class="CardsList">
     <div *ngFor="let car of filteredCarsArr">
         <app-card [car]="car"></app-card>

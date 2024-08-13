@@ -38,7 +38,6 @@ export class CardsListComponent {
       else{
         this.filteredCarsArr=this.carsArr;
       }
-     
-   
+    
   }
 }
