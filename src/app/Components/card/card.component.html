@@ -1,4 +1,4 @@
-<div class="card bg-light" [ngClass]="{'AvailableCar': car.availability,'NotAvailableCar':!car.availability}"   style="width:250px; margin: 50px 50px;">
+<div class="card bg-light" [ngClass]="{'AvailableCar': car.availability,'NotAvailableCar':!car.availability}"   style="width:250px; margin:50px;">
     <div class="card-header bg-dark"><h4 class="card-title text-light">{{car.car}} <ng-template #OutOfStock>
         <h6 class="text-danger">Out Of Stock</h6>
        </ng-template>

@@ -1,5 +1,19 @@
+<label>Filter By Availabilty</label>
+<div class="card bg-light">
+    <select>
+        <option value="All">All</option>
+        <option value="InStock">
+         Available
+        </option>
+        <option value="OutOfStock">
+         Out of Stock
+        </option>
+    </select>
+</div>
 <div class="CardsList">
     <div *ngFor="let car of carsArr">
         <app-card [car]="car"></app-card>
     </div>
 </div>
+
+

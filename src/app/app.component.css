@@ -1,0 +1,7 @@
+.HeaderComponent{
+    z-index:999;
+    margin-top:0;
+    position: fixed;
+    width:100%;
+    background-color: white;
+}
