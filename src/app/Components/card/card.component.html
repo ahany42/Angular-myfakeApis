@@ -1,0 +1,26 @@
+<div class="card bg-light" [ngClass]="{'AvailableCar': car.availability,'NotAvailableCar':!car.availability}"   style="width:250px; margin: 50px 50px;">
+    <div class="card-header bg-dark"><h4 class="card-title text-light">{{car.car}} <ng-template #OutOfStock>
+        <h6 class="text-danger">Out Of Stock</h6>
+       </ng-template>
+       <ng-container *ngIf="car.availability;else OutOfStock">
+       <h6 class="text-success">Available </h6>
+       </ng-container>
+       
+    </h4>     
+    </div>
+    <ng-container *ngIf="!car.availability;else AvailablePlaceholder" >
+        <img src="../../../assets/NotAvailablePlaceholder.svg" alt="Placeholder Image">
+    </ng-container>
+    <ng-template #AvailablePlaceholder>
+        <img src="../../../assets/AvaialblePlaceholder.svg" alt="Placeholder Image">
+    </ng-template>
+    <div class="card-body">{{car.car_color}} {{car.car_model}} {{car.car_model_year}}</div>
+    <div class="card-footer">
+        <ng-container *ngIf="car.availability; else Notify">
+            <a href="https://github.com/ahany42"><button class="bg-dark text-light">Buy</button></a>
+           </ng-container>
+            <ng-template #Notify>
+                <a  href="https://github.com/ahany42"><button class="bg-dark text-light">Notify Me</button></a>
+            </ng-template>
+    </div>
+</div>
