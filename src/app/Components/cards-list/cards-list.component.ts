@@ -40,4 +40,7 @@ export class CardsListComponent {
       }
     
   }
+  DeleteCar(id:number){
+    this.filteredCarsArr=this.filteredCarsArr.filter(car=>car.id!==id);
+  }
 }

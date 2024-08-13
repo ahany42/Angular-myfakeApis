@@ -1,5 +1,5 @@
-import { Component,Input } from '@angular/core';
-
+import { Component,Input,EventEmitter,Output } from '@angular/core';
+import { CardsListComponent } from '../cards-list/cards-list.component';
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
@@ -7,4 +7,9 @@ import { Component,Input } from '@angular/core';
 })
 export class CardComponent {
 @Input() car:any;
+@Output() remove = new EventEmitter<void>();
+DeleteCar(){
+  this.remove.emit();
+
+}
 }
