@@ -1,6 +1,6 @@
 <label>Filter By Availabilty</label>
 <div class="card bg-light">
-    <select>
+    <select (change)="Filter($event)">
         <option value="All">All</option>
         <option value="InStock">
          Available
@@ -11,7 +11,7 @@
     </select>
 </div>
 <div class="CardsList">
-    <div *ngFor="let car of carsArr">
+    <div *ngFor="let car of filteredCarsArr">
         <app-card [car]="car"></app-card>
     </div>
 </div>

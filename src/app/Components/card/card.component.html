@@ -14,7 +14,10 @@
     <ng-template #AvailablePlaceholder>
         <img src="../../../assets/AvaialblePlaceholder.svg" alt="Placeholder Image">
     </ng-template>
-    <div class="card-body">{{car.car_color}} {{car.car_model}} {{car.car_model_year}}</div>
+    <div class="card-body">{{car.car_color}} {{car.car_model}} {{car.car_model_year}}
+        <br>
+        {{car.price}}
+    </div>
     <div class="card-footer">
         <ng-container *ngIf="car.availability; else Notify">
             <a href="https://github.com/ahany42"><button class="bg-dark text-light">Buy</button></a>
