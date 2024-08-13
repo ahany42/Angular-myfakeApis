@@ -1,7 +1,18 @@
 .HeaderComponent{
-    z-index:999;
+    z-index:99;
     margin-top:0;
     position: fixed;
     width:100%;
     background-color: white;
+}
+.ScrollToTop>button{
+    z-index:999;
+    margin-bottom: 0;
+    position: fixed;
+    background-color: transparent;
+    color:white;
+    text-decoration: underline;
+    border: none;
+    font-weight:600;
+
 }

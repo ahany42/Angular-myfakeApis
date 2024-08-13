@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'myApp';
+  ScrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }
