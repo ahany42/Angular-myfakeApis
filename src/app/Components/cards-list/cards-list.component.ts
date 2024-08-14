@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import {Car} from '../Model/car';
 @Component({
   selector: 'app-cards-list',
   templateUrl: './cards-list.component.html',
@@ -42,5 +42,12 @@ export class CardsListComponent {
   }
   DeleteCar(id:number){
     this.filteredCarsArr=this.filteredCarsArr.filter(car=>car.id!==id);
+  }
+  EditCar(id:number){
+    let index:number;
+    index=this.filteredCarsArr.findIndex(car=>car.id===id);
+    this.filteredCarsArr[index].car="Honda";
+    this.filteredCarsArr[index].availability=true;
+  
   }
 }
