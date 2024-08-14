@@ -8,12 +8,12 @@ import { CardsListComponent } from '../cards-list/cards-list.component';
 export class CardComponent {
 @Input() car:any;
 @Output() remove = new EventEmitter<void>();
-@Output() edit = new EventEmitter<any>();
+@Output() view = new EventEmitter<any>();
 
 DeleteCar(){
   this.remove.emit();
 }
-EditCar(){
-  this.edit.emit(this.car);
+ViewCar(){
+  this.view.emit(this.car);
 }
 }

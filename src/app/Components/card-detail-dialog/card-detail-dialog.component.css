@@ -1,0 +1,13 @@
+*{
+    background-color:#f9f9f9 !important;
+    color:black !important;
+}
+.DialogCard { 
+    border-bottom: none !important;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9) !important; 
+  }
+p{
+    text-align: center;
+}
+  
+  

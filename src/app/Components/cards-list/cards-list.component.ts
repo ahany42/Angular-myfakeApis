@@ -50,7 +50,7 @@ export class CardsListComponent {
   DeleteCar(id:number){
     this.filteredCarsArr=this.filteredCarsArr.filter(car=>car.id!==id);
   }
-  EditCar(id:number){
+  ViewCar(id:number){
     let index:number;
     index=this.filteredCarsArr.findIndex(car=>car.id===id);
     // this.filteredCarsArr[index].car="Honda";
