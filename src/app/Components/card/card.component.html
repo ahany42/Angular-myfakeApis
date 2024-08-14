@@ -1,9 +1,9 @@
-<div class="card bg-light" [ngClass]="{'AvailableCar': car.availability,'NotAvailableCar':!car.availability}" style="width:250px;margin:10px;"(click)="ViewCar()">
-    <div class="card-header bg-dark"><h4 class="card-title text-light">{{car.car}} <ng-template #OutOfStock>
+<div class="card bg-light" [ngClass]="{'AvailableCar': car.availability,'NotAvailableCar':!car.availability}" style="width:250px;margin:10px;">
+    <div *ngIf="!carEdited" class="card-header bg-dark" (click)="ViewCar()"><h4 class="card-title text-light">{{car.car}} <ng-template #OutOfStock >
         <div class="CardSubHeader">
             <h6 class="text-danger">Out Of Stock</h6>  
             <div class="Icons">
-                <i *ngIf="!cardViewed" class="fa-solid fa-pen" style="color: #ffffff;"></i> 
+                <i *ngIf="!cardViewed" class="fa-solid fa-pen" style="color: #ffffff;" (click)="carEdited = true"></i> 
                 <i *ngIf="!cardViewed" class="fa-regular fa-trash-can text-danger" (click)="DeleteCar()"></i>
             </div>
         </div>
@@ -12,7 +12,7 @@
         <div class="CardSubHeader">  
         <h6 class="text-success">Available</h6>
         <div class="Icons">
-            <i *ngIf="!cardViewed" class="fa-solid fa-pen" style="color: #ffffff;"></i> 
+            <i *ngIf="!cardViewed" class="fa-solid fa-pen" style="color: #ffffff;" (click)="carEdited = true"></i> 
             <i *ngIf="!cardViewed" class="fa-regular fa-trash-can text-danger" (click)="DeleteCar()"></i>
         </div>
         </div>
@@ -21,22 +21,41 @@
     </h4>     
    
     </div>
+    <div *ngIf="carEdited" class="card-header bg-dark"  ><h4 class="card-title text-light"><input type="text" value={{car.car}} class="bg-dark text-light" id="CarInput">
+        <div class="CardSubHeader">
+        
+        </div>
+    </h4>     
+   
+    </div>
     <ng-container *ngIf="!car.availability;else AvailablePlaceholder" >
-        <img src="../../../assets/NotAvailablePlaceholder.svg" alt="Placeholder Image">
+        <img src="../../../assets/NotAvailablePlaceholder.svg" alt="Placeholder Image" (click)="ViewCar()">
     </ng-container>
     <ng-template #AvailablePlaceholder>
-        <img src="../../../assets/AvaialblePlaceholder.svg" alt="Placeholder Image">
+        <img src="../../../assets/AvaialblePlaceholder.svg" alt="Placeholder Image" (click)="ViewCar()">
     </ng-template>
-    <div class="card-body">{{car.car_color}} {{car.car_model}} {{car.car_model_year}}
+    <div *ngIf="!carEdited" class="card-body" (click)="ViewCar()">
+        {{car.car_color}} {{car.car_model}} {{car.car_model_year}}
         <br>
         {{car.price}}
     </div>
-    <div class="card-footer">
+    <div *ngIf="carEdited" class="card-body">
+        <input value={{car.car_color}}>
+        <input value= {{car.car_model}}>
+        <input value= {{car.car_model_year}}>
+        <br>
+        <input value= {{car.price}}>
+       
+    </div>
+    <div *ngIf="!carEdited" class="card-footer">
         <ng-container *ngIf="car.availability; else Notify">
             <a href="https://github.com/ahany42"><button class="bg-dark text-light">Buy</button></a>
            </ng-container>
             <ng-template #Notify>
                 <a  href="https://github.com/ahany42"><button class="bg-dark text-light">Notify Me</button></a>
             </ng-template>
+    </div>
+    <div *ngIf="carEdited" class="card-footer">
+        <button class="bg-dark text-light" (click)="SaveCard()">Save</button>
     </div>
 </div>
