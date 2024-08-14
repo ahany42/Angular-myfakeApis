@@ -48,6 +48,10 @@ export class CardsListComponent {
     index=this.filteredCarsArr.findIndex(car=>car.id===id);
     this.filteredCarsArr[index].car="Honda";
     this.filteredCarsArr[index].availability=true;
-  
+    this.filteredCarsArr[index].price="$500";
+    this.filteredCarsArr[index].car_model="Test";
+    this.filteredCarsArr[index].car_model_year=2000;
+    this.filteredCarsArr[index].car_color="Blue";
+
   }
 }
