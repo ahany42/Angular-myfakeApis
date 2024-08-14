@@ -40,7 +40,7 @@
     <div *ngIf="!carEdited" class="card-body" (click)="ViewCar()">
         {{car.car_color}} {{car.car_model}} {{car.car_model_year}}
         <br>
-        {{car.price}}
+        {{car.car_price}}
     </div>
     <div *ngIf="carEdited" class="card-body">
         <small class="form-text text-muted" #ColorText>Car Color</small>
