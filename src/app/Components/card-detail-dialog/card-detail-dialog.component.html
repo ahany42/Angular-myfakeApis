@@ -1,5 +1,5 @@
 <div mat-dialog-content class="DialogCard">
-    <app-card [car]="data"></app-card>
+    <app-card [car]="data" (removep)="DeleteCar()"[cardViewed]="true"></app-card>
     <p>Vin:{{data.car_vin}}</p>
 </div>
 <div mat-dialog-actions>

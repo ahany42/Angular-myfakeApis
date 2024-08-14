@@ -7,6 +7,7 @@ import { CardsListComponent } from '../cards-list/cards-list.component';
 })
 export class CardComponent {
 @Input() car:any;
+@Input() cardViewed: boolean = false;
 @Output() remove = new EventEmitter<void>();
 @Output() view = new EventEmitter<any>();
 

@@ -13,7 +13,7 @@
 <p>{{filteredCarsArr.length}} Results</p>
 <div class="CardsList">
     <div *ngFor="let car of filteredCarsArr">
-        <app-card [car]="car" (remove)="DeleteCar(car.id)" (view)="ViewCar(car.id)" ></app-card>
+        <app-card [car]="car" (remove)="DeleteCar(car.id)" (view)="ViewCar(car.id)" [cardViewed]="false" ></app-card>
     </div>
 </div>
 
