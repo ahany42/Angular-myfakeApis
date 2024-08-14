@@ -79,8 +79,13 @@ SaveCard(){
     this.priceInput.nativeElement.classList.add('is-invalid');
   }
   if(carName !=="" && carColor !=="" && carModel!=="" && carModelYear !=="" && carPrice !==""){
-
+    this.car.car=carName;
+    this.car.car_model=carModel;
+    this.car.car_color=carColor;
+    this.car.car_model_year=carModelYear;
+    this.car.car_price=carPrice;
     this.carEdited=false;
+    this.edit.emit(this.car);
   }
 }
 DiscardCard(){
