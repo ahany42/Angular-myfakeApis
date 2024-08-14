@@ -21,30 +21,36 @@
     </h4>     
    
     </div>
-    <div *ngIf="carEdited" class="card-header bg-dark"  ><h4 class="card-title text-light"><input type="text" value={{car.car}} class="bg-dark text-light" id="CarInput">
+    <div *ngIf="carEdited" class="card-header bg-dark"  ><h4 class="card-title text-light">
+        <input #CarInput type="text" value={{car.car}} class="bg-dark text-light form-control" id="CarInput">
         <div class="CardSubHeader">
         
         </div>
     </h4>     
    
-    </div>
-    <ng-container *ngIf="!car.availability;else AvailablePlaceholder" >
-        <img src="../../../assets/NotAvailablePlaceholder.svg" alt="Placeholder Image" (click)="ViewCar()">
+    </div>  
+    <ng-container  *ngIf="!carEdited">
+        <ng-container *ngIf="!car.availability;else AvailablePlaceholder" >
+            <img src="../../../assets/NotAvailablePlaceholder.svg" alt="Placeholder Image" (click)="ViewCar()">
+        </ng-container>
+        <ng-template #AvailablePlaceholder>
+            <img src="../../../assets/AvaialblePlaceholder.svg" alt="Placeholder Image" (click)="ViewCar()">
+        </ng-template>
     </ng-container>
-    <ng-template #AvailablePlaceholder>
-        <img src="../../../assets/AvaialblePlaceholder.svg" alt="Placeholder Image" (click)="ViewCar()">
-    </ng-template>
     <div *ngIf="!carEdited" class="card-body" (click)="ViewCar()">
         {{car.car_color}} {{car.car_model}} {{car.car_model_year}}
         <br>
         {{car.price}}
     </div>
     <div *ngIf="carEdited" class="card-body">
-        <input value={{car.car_color}}>
-        <input value= {{car.car_model}}>
-        <input value= {{car.car_model_year}}>
-        <br>
-        <input value= {{car.price}}>
+        <small class="form-text text-muted" #ColorText>Car Color</small>
+        <input #ColorInput value={{car.car_color}} class="form-control">
+        <small class="form-text text-muted" #ModelText>Car Model</small>
+        <input #ModelInput value= {{car.car_model}} class="form-control">
+        <small class="form-text text-muted" #YearText>Car Model Year</small>
+        <input #YearInput value= {{car.car_model_year}} class="form-control">
+        <small class="form-text text-muted" #PriceText>Car Price</small>
+        <input #PriceInput value= {{car.price}} class="form-control">
        
     </div>
     <div *ngIf="!carEdited" class="card-footer">
@@ -57,5 +63,8 @@
     </div>
     <div *ngIf="carEdited" class="card-footer">
         <button class="bg-dark text-light" (click)="SaveCard()">Save</button>
+        <br>
+        <button class="bg-light text-dark" (click)="DiscardCard()">Discard</button>
+
     </div>
 </div>
