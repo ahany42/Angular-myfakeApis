@@ -13,13 +13,15 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule} from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
+import { CardDetailDialogComponent } from './Components/card-detail-dialog/card-detail-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
     CardsListComponent,
-    HeaderComponent
+    HeaderComponent,
+    CardDetailDialogComponent
   ],
   imports: [
     BrowserModule,
