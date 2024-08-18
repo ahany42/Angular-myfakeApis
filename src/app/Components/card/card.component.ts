@@ -78,7 +78,10 @@ SaveCard(){
     this.priceText.nativeElement.classList.remove('text-muted');
     this.priceInput.nativeElement.classList.add('is-invalid');
   }
-  if(carName !=="" && carColor !=="" && carModel!=="" && carModelYear !=="" && carPrice !==""){
+  if(carName.length>15){
+    alert("Car Name Should be 15 characters maximum");
+  }
+  else if(carName !=="" && carColor !=="" && carModel!=="" && carModelYear !=="" && carPrice !==""){
     this.car.car=carName;
     this.car.car_model=carModel;
     this.car.car_color=carColor;
